@@ -1,9 +1,12 @@
 import axios from 'axios';
 
 // Create axios instance with base URL
-const baseURL = process.env.NODE_ENV === 'production' 
-  ? process.env.REACT_APP_API_URL_PROD || 'https://your-backend-url.vercel.app'
-  : process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const api = axios.create({
+  baseURL: 'http://127.0.0.1:4040',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
 console.log('API Base URL:', baseURL);
 
